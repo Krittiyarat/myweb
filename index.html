@@ -3,4 +3,16 @@
   <h3>Hello World!</h3>
   <h3>Krittiyarat Sankaew</h3>
   <h1>Give me FULL Marks please</h1>
+
+  import requests
+
+API_URL = "https://antinitonnie-flowise-2.onrender.com/api/v1/prediction/fd127505-bb54-4bb0-b65c-3da85b78752f"
+
+def query(payload):
+    response = requests.post(API_URL, json=payload)
+    return response.json()
+    
+output = query({
+    "question": "Hey, how are you?",
+})
 </html>
